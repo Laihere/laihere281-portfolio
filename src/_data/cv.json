@@ -1,0 +1,70 @@
+{
+  "experience": [
+    {
+      "role": "Entry AI/ML Engineer",
+      "org": "Al-Kindi Coding Centre",
+      "period": "Apr 2026 – Present",
+      "points": [
+        "Benchmarked AI models (e.g. GPT, DeepSeek) for document-query chat on token cost, context retention, response time and answer quality.",
+        "Built a structured, normalised extraction pipeline for document categories and metadata (e.g. invoices, purchase orders).",
+        "Produced insights and visualisations from extracted document data."
+      ]
+    },
+    {
+      "role": "AI/ML Intern",
+      "org": "Al-Kindi Coding Centre",
+      "period": "Jan 2026 – Mar 2026",
+      "points": [
+        "Implemented and tested open-source OCR, improving output readability, run-time, resource usage and structure.",
+        "Classified and tagged documents with zero-shot classification and tag-generation models from Hugging Face.",
+        "Extracted document metadata (e.g. author, date) with named entity recognition.",
+        "Assembled Kaggle test datasets to measure model accuracy, run-time and resource usage."
+      ]
+    },
+    {
+      "role": "Supply Chain & Inventory Intern",
+      "org": "Mossery Sdn Bhd",
+      "period": "Jul 2024 – Oct 2024",
+      "points": [
+        "Forecast and planned production and sales from prior-year trends and seasonality.",
+        "Built a semi-automated Google Sheets + Power BI dashboard shared with logistics, production and fulfilment, reducing repetitive manual work.",
+        "Analysed raw-material purchases, shipping costs and supply/demand across peak and off-peak seasons in R.",
+        "Prepared and presented the department's monthly town-hall reports."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "title": "Bachelor of Computer Science (Advanced Computer Science)",
+      "org": "Monash University Malaysia",
+      "period": "2020 – 2025",
+      "note": "Final year project: measured bias in generative image models using Cramér's V and Ducher's Z on face-classification outputs."
+    },
+    {
+      "title": "Monash University Foundation Year",
+      "org": "Sunway University",
+      "period": "2019 – 2020"
+    },
+    {
+      "title": "GCE O-Level",
+      "org": "Chung Ching Middle School",
+      "period": "2016 – 2018"
+    }
+  ],
+  "skills": [
+    "Data cleaning & wrangling",
+    "Descriptive & statistical analysis",
+    "Data visualisation",
+    "Dashboard automation",
+    "Data modelling",
+    "External data collection",
+    "Databases (DBMS)"
+  ],
+  "tools": [
+    "Python", "pandas", "NumPy", "Matplotlib", "Plotly",
+    "R", "tidyverse", "ggplot2",
+    "SQL", "Excel", "Google Sheets", "Power BI",
+    "Hugging Face", "Ollama", "OpenAI", "Gemini",
+    "JavaScript", "Django", "Java", "C/C++"
+  ]
+}

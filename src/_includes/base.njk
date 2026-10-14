@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} · {% endif %}{{ site.name }}</title>
+  <meta name="description" content="{{ summary or site.description }}">
+  <meta property="og:title" content="{{ title or site.name }}">
+  <meta property="og:description" content="{{ summary or site.description }}">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/charts.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/">{{ site.name }}</a>
+      <nav aria-label="Main">
+        <a href="/#projects">Projects</a>
+        <a href="/#experience">Experience</a>
+        <a href="/#education">Education</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© {{ year }} {{ site.name }}. Data credited to its original publishers on each case study.</p>
+      <a class="support" href="{{ site.support.url or '#' }}">{{ site.support.label }}</a>
+    </div>
+  </footer>
+</body>
+</html>

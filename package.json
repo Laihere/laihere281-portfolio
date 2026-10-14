@@ -1,0 +1,15 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Data analytics portfolio and CV site",
+  "type": "module",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "build:drafts": "INCLUDE_DRAFTS=1 eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  }
+}

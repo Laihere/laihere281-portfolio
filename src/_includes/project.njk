@@ -1,0 +1,47 @@
+---
+layout: base.njk
+---
+<article class="case-study">
+  <a class="back" href="/#projects">← All projects</a>
+  <header>
+    {% if draft %}<p class="badge">Draft: not published</p>{% endif %}
+    <h1>{{ title }}</h1>
+    <p class="lede">{{ summary }}</p>
+    <p class="meta">{{ page.date | readableDate }}</p>
+  </header>
+
+  <dl class="glance">
+    <div>
+      <dt>Question</dt>
+      <dd>{{ question }}</dd>
+    </div>
+    <div>
+      <dt>Data</dt>
+      <dd>{% for s in sources %}<a href="{{ s.url }}">{{ s.publisher }}</a>, {{ s.dataset }}{% if not loop.last %}<br>{% endif %}{% endfor %}</dd>
+    </div>
+    <div>
+      <dt>Tools</dt>
+      <dd><ul class="tags">{% for t in tools %}<li>{{ t }}</li>{% endfor %}</ul></dd>
+    </div>
+    {% if links %}
+    <div>
+      <dt>Code</dt>
+      <dd>{% for l in links %}<a href="{{ l.url }}">{{ l.label }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</dd>
+    </div>
+    {% endif %}
+  </dl>
+
+  <div class="prose">
+    {{ content | safe }}
+  </div>
+
+  <section class="sources" aria-labelledby="sources-h">
+    <h2 id="sources-h">Sources &amp; credits</h2>
+    <ul>
+      {% for s in sources %}
+      <li>{{ s.publisher }} ({{ s.year }}). <em>{{ s.dataset }}</em>. <a href="{{ s.url }}">{{ s.url }}</a>{% if s.accessed %}. Accessed {{ s.accessed | readableDate({ day: "numeric", month: "long", year: "numeric" }) }}{% endif %}.{% if s.note %} {{ s.note }}{% endif %}</li>
+      {% endfor %}
+    </ul>
+    <p class="muted">Figures and analysis are my own and do not represent the views of the data publisher.</p>
+  </section>
+</article>

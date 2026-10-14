@@ -1,0 +1,78 @@
+---
+layout: base.njk
+---
+<section class="intro">
+  <h1>{{ site.name }}</h1>
+  <p class="role">{{ site.role }} · {{ site.location }}</p>
+  <p class="lede">{{ site.intro }}</p>
+  <p class="actions">
+    <a class="button" href="#projects">See projects</a>
+    <a class="button secondary" href="{{ site.cv }}" download>Download CV (PDF)</a>
+  </p>
+</section>
+
+<section id="projects" aria-labelledby="projects-h">
+  <h2 id="projects-h">Projects</h2>
+  {% if collections.projects.length %}
+  <ul class="project-list">
+    {% for p in collections.projects %}
+    <li class="project-card">
+      <a href="{{ p.url }}">
+        <h3>{{ p.data.title }}{% if p.data.draft %} <span class="badge">Draft</span>{% endif %}</h3>
+        <p>{{ p.data.summary }}</p>
+        <p class="meta">{% for s in p.data.sources %}{{ s.publisher }}{% if not loop.last %} · {% endif %}{% endfor %} · {{ p.date | readableDate }}</p>
+        <ul class="tags">{% for t in p.data.tools %}<li>{{ t }}</li>{% endfor %}</ul>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="muted">Case studies on Brunei's public data are on the way.</p>
+  {% endif %}
+</section>
+
+<section id="experience" aria-labelledby="experience-h">
+  <h2 id="experience-h">Experience</h2>
+  <ol class="timeline">
+    {% for job in cv.experience %}
+    <li>
+      <div class="timeline-head">
+        <h3>{{ job.role }} <span class="org">· {{ job.org }}</span></h3>
+        <span class="period">{{ job.period }}</span>
+      </div>
+      <ul>{% for pt in job.points %}<li>{{ pt }}</li>{% endfor %}</ul>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section id="education" aria-labelledby="education-h">
+  <h2 id="education-h">Education</h2>
+  <ol class="timeline">
+    {% for ed in cv.education %}
+    <li>
+      <div class="timeline-head">
+        <h3>{{ ed.title }} <span class="org">· {{ ed.org }}</span></h3>
+        <span class="period">{{ ed.period }}</span>
+      </div>
+      {% if ed.note %}<p>{{ ed.note }}</p>{% endif %}
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section id="skills" aria-labelledby="skills-h">
+  <h2 id="skills-h">Skills &amp; tools</h2>
+  <ul class="tags strip">{% for s in cv.skills %}<li>{{ s }}</li>{% endfor %}</ul>
+  <ul class="tags strip tools">{% for t in cv.tools %}<li>{{ t }}</li>{% endfor %}</ul>
+</section>
+
+<section id="contact" aria-labelledby="contact-h">
+  <h2 id="contact-h">Contact</h2>
+  <ul class="contact">
+    <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+    {% if site.linkedin %}<li><a href="{{ site.linkedin }}">LinkedIn</a></li>{% endif %}
+    {% if site.github %}<li><a href="{{ site.github }}">GitHub</a></li>{% endif %}
+    <li><a href="{{ site.cv }}" download>CV (PDF)</a></li>
+  </ul>
+</section>
