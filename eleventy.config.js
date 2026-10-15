@@ -48,6 +48,12 @@ export default function (eleventyConfig) {
     if (data.draft && isBuild && !process.env.INCLUDE_DRAFTS) return false;
   });
 
+  // Same rule for cards in _data/work.json: `draft: true` items are dropped from production builds.
+  eleventyConfig.addFilter("published", (items = []) => {
+    const isBuild = process.env.ELEVENTY_RUN_MODE === "build";
+    return items.filter((i) => !i.draft || !isBuild || process.env.INCLUDE_DRAFTS);
+  });
+
   eleventyConfig.addGlobalData("year", () => new Date().getFullYear());
 
   eleventyConfig.addPassthroughCopy("src/assets");

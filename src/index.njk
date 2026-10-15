@@ -7,7 +7,7 @@ layout: base.njk
   <p class="lede">{{ site.intro }}</p>
   <p class="actions">
     <a class="button" href="#projects">See projects</a>
-    <a class="button secondary" href="{{ site.cv }}" download>Download CV (PDF)</a>
+    {% if site.cv %}<a class="button secondary" href="{{ site.cv }}" download>Download CV (PDF)</a>{% endif %}
   </p>
 </section>
 
@@ -15,7 +15,7 @@ layout: base.njk
 {% macro card(item) %}
 <li class="project-card">
   {% if item.url %}<a class="card" href="{{ item.url }}">{% else %}<div class="card">{% endif %}
-    <h3>{{ item.title }}{% if item.status %} <span class="badge">{{ item.status }}</span>{% endif %}</h3>
+    <h3>{{ item.title }}{% if item.draft %} <span class="badge">Draft</span>{% endif %}{% if item.status %} <span class="badge">{{ item.status }}</span>{% endif %}</h3>
     {% if item.context %}<p class="meta">{{ item.context }}</p>{% endif %}
     <p>{{ item.summary }}</p>
     {% if item.credit %}<p class="meta">{{ item.credit }}</p>{% endif %}
@@ -28,8 +28,8 @@ layout: base.njk
 <section id="projects" aria-labelledby="professional-h">
   <h2 id="professional-h">Professional work</h2>
   <p class="muted">{{ work.professional.note }}</p>
-  {% if work.professional.items.length %}
-  <ul class="project-list">{% for item in work.professional.items %}{{ card(item) }}{% endfor %}</ul>
+  {% if (work.professional.items | published).length %}
+  <ul class="project-list">{% for item in (work.professional.items | published) %}{{ card(item) }}{% endfor %}</ul>
   {% else %}
   <p class="muted">{{ work.professional.empty }}</p>
   {% endif %}
@@ -38,13 +38,13 @@ layout: base.njk
 <section id="academic" aria-labelledby="academic-h">
   <h2 id="academic-h">Academic projects</h2>
   <p class="muted">{{ work.academic.note }}</p>
-  <ul class="project-list">{% for item in work.academic.items %}{{ card(item) }}{% endfor %}</ul>
+  <ul class="project-list">{% for item in (work.academic.items | published) %}{{ card(item) }}{% endfor %}</ul>
 </section>
 
 <section id="personal" aria-labelledby="personal-h">
   <h2 id="personal-h">Personal projects</h2>
   <p class="muted">{{ work.personal.note }}</p>
-  {% if collections.projects.length or work.personal.items.length %}
+  {% if collections.projects.length or (work.personal.items | published).length %}
   <ul class="project-list">
     {% for p in collections.projects %}
     <li class="project-card">
@@ -56,7 +56,7 @@ layout: base.njk
       </a>
     </li>
     {% endfor %}
-    {% for item in work.personal.items %}{{ card(item) }}{% endfor %}
+    {% for item in (work.personal.items | published) %}{{ card(item) }}{% endfor %}
   </ul>
   {% else %}
   <p class="muted">{{ work.personal.empty }}</p>
@@ -105,6 +105,6 @@ layout: base.njk
     <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
     {% if site.linkedin %}<li><a href="{{ site.linkedin }}">LinkedIn</a></li>{% endif %}
     {% if site.github %}<li><a href="{{ site.github }}">GitHub</a></li>{% endif %}
-    <li><a href="{{ site.cv }}" download>CV (PDF)</a></li>
+    {% if site.cv %}<li><a href="{{ site.cv }}" download>CV (PDF)</a></li>{% endif %}
   </ul>
 </section>

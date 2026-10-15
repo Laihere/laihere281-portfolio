@@ -5,9 +5,11 @@
       "org": "Al-Kindi Coding Centre",
       "period": "Apr 2026 – Present",
       "points": [
-        "Benchmarked AI models (e.g. GPT, DeepSeek) for document-query chat on token cost, context retention, response time and answer quality.",
-        "Built a structured, normalised extraction pipeline for document categories and metadata (e.g. invoices, purchase orders).",
-        "Produced insights and visualisations from extracted document data."
+        "Led backend work on document information extraction and OCR, integrating third-party AI services for classification, tagging and metadata extraction.",
+        "Built the backend for AI document chat and smart search across an organisation's documents, with confidence-scored answers.",
+        "Built finance alerts (invoices, purchase orders, shipping orders) with risk priority and an audit workflow, plus an analytics hub for KPIs, forecasting and reports.",
+        "Built workflow modules (Forms, Flow Hub, Calendar Hub) and Dashboard Pilot, a self-service dashboard builder with an AI co-pilot.",
+        "Contributed to platform security, performance, testing and deployment documentation as part of the development team."
       ]
     },
     {
@@ -61,10 +63,25 @@
     "Databases (DBMS)"
   ],
   "tools": [
-    "Python", "pandas", "NumPy", "Matplotlib", "Plotly",
-    "R", "tidyverse", "ggplot2",
-    "SQL", "Excel", "Google Sheets", "Power BI",
-    "Hugging Face", "Ollama", "OpenAI", "Gemini",
-    "JavaScript", "Django", "Java", "C/C++"
+    "Python",
+    "pandas",
+    "NumPy",
+    "Matplotlib",
+    "Plotly",
+    "R",
+    "tidyverse",
+    "ggplot2",
+    "SQL",
+    "Excel",
+    "Google Sheets",
+    "Power BI",
+    "Hugging Face",
+    "Ollama",
+    "OpenAI",
+    "Gemini",
+    "JavaScript",
+    "Django",
+    "Java",
+    "C/C++"
   ]
 }
