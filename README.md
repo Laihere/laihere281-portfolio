@@ -45,6 +45,7 @@ Each chart gets a hover tooltip and a "View data table" toggle, so the numbers c
 
 - **Name, intro, email, LinkedIn/GitHub URLs, support link:** `src/_data/site.json`. Empty URLs are hidden.
 - **Experience, education, skills, tools:** `src/_data/cv.json`
+- **Professional, academic and personal project cards:** `src/_data/work.json`. Each card takes `title`, `summary`, `tags`, and optionally `context`, `status` (e.g. "In progress"), `updated` (YYYY-MM-DD, shown as "Last updated"), `credit` and `url` (the card becomes a link only when `url` is set). Full case studies under `src/projects/` appear under Personal projects.
 - **CV PDF:** replace `src/assets/cv/Muhd-Lai-Razi-CV.pdf`
 - **Styles:** `src/assets/css/style.css`
 

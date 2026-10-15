@@ -11,13 +11,44 @@ layout: base.njk
   </p>
 </section>
 
-<section id="projects" aria-labelledby="projects-h">
-  <h2 id="projects-h">Projects</h2>
-  {% if collections.projects.length %}
+{# Ordered from most to least structured: employer work, coursework, self-initiated. #}
+{% macro card(item) %}
+<li class="project-card">
+  {% if item.url %}<a class="card" href="{{ item.url }}">{% else %}<div class="card">{% endif %}
+    <h3>{{ item.title }}{% if item.status %} <span class="badge">{{ item.status }}</span>{% endif %}</h3>
+    {% if item.context %}<p class="meta">{{ item.context }}</p>{% endif %}
+    <p>{{ item.summary }}</p>
+    {% if item.credit %}<p class="meta">{{ item.credit }}</p>{% endif %}
+    {% if item.updated %}<p class="meta">Last updated {{ item.updated | readableDate({ year: "numeric", month: "long", day: "numeric" }) }}</p>{% endif %}
+    <ul class="tags">{% for t in item.tags %}<li>{{ t }}</li>{% endfor %}</ul>
+  {% if item.url %}</a>{% else %}</div>{% endif %}
+</li>
+{% endmacro %}
+
+<section id="projects" aria-labelledby="professional-h">
+  <h2 id="professional-h">Professional work</h2>
+  <p class="muted">{{ work.professional.note }}</p>
+  {% if work.professional.items.length %}
+  <ul class="project-list">{% for item in work.professional.items %}{{ card(item) }}{% endfor %}</ul>
+  {% else %}
+  <p class="muted">{{ work.professional.empty }}</p>
+  {% endif %}
+</section>
+
+<section id="academic" aria-labelledby="academic-h">
+  <h2 id="academic-h">Academic projects</h2>
+  <p class="muted">{{ work.academic.note }}</p>
+  <ul class="project-list">{% for item in work.academic.items %}{{ card(item) }}{% endfor %}</ul>
+</section>
+
+<section id="personal" aria-labelledby="personal-h">
+  <h2 id="personal-h">Personal projects</h2>
+  <p class="muted">{{ work.personal.note }}</p>
+  {% if collections.projects.length or work.personal.items.length %}
   <ul class="project-list">
     {% for p in collections.projects %}
     <li class="project-card">
-      <a href="{{ p.url }}">
+      <a class="card" href="{{ p.url }}">
         <h3>{{ p.data.title }}{% if p.data.draft %} <span class="badge">Draft</span>{% endif %}</h3>
         <p>{{ p.data.summary }}</p>
         <p class="meta">{% for s in p.data.sources %}{{ s.publisher }}{% if not loop.last %} · {% endif %}{% endfor %} · {{ p.date | readableDate }}</p>
@@ -25,9 +56,10 @@ layout: base.njk
       </a>
     </li>
     {% endfor %}
+    {% for item in work.personal.items %}{{ card(item) }}{% endfor %}
   </ul>
   {% else %}
-  <p class="muted">Case studies on Brunei's public data are on the way.</p>
+  <p class="muted">{{ work.personal.empty }}</p>
   {% endif %}
 </section>
 

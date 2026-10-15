@@ -1,0 +1,51 @@
+{
+  "professional": {
+    "note": "Work done for employers. Described at a high level only; internal code, data and documents stay with the company.",
+    "empty": "Details of my work at Al-Kindi Coding Centre are being written up.",
+    "items": []
+  },
+  "academic": {
+    "note": "University coursework at Monash University Malaysia. Code and reports aren't published here, but I'm happy to walk through them on request.",
+    "items": [
+      {
+        "title": "Generative AI for Humanity",
+        "context": "Final year project",
+        "summary": "Measured bias in two open-source unconditional image-generation models. Classified faces in the original and generated images with an open-source face-recognition model, then compared them using Cramér's V and Ducher's Z. Also covered testing, a step-by-step user guide and the project documentation.",
+        "tags": ["Generative models", "Face classification", "Bias metrics", "Testing & QA"]
+      },
+      {
+        "title": "COVID-19 Pro-Social Behaviour Study",
+        "context": "Data analytics coursework",
+        "summary": "Used linear models to find the top predictors of pro-social behaviour during COVID-19 in a focus country, and compared them with other countries. Added external data (vaccination rate, GDP, development index) and clustered countries to test whether similar countries share the same predictors.",
+        "tags": ["Linear models", "Clustering", "Data wrangling", "External data"]
+      },
+      {
+        "title": "More Humid Tomorrow Prediction",
+        "context": "Data analytics coursework",
+        "summary": "Predicted whether tomorrow will be more humid than today. Compared decision tree, naive Bayes, bagging, boosting, random forest, neural network and KNN classifiers by confusion matrix, ROC curve and AUC, then used variable importance to drop weak predictors and retest.",
+        "tags": ["Classification", "ROC / AUC", "Feature selection"]
+      },
+      {
+        "title": "NLP for Network Analysis",
+        "context": "Data analytics coursework",
+        "summary": "Built a corpus of three topics from 15 Google Scholar sources, cleaned and tokenised it into document-term matrices, and clustered the documents hierarchically, checking the clusters against topic labels. Mapped word and document relationships with single-mode and bipartite networks using degree, betweenness, closeness and eigenvector centrality.",
+        "tags": ["Text mining", "Hierarchical clustering", "Network analysis"]
+      }
+    ]
+  },
+  "personal": {
+    "note": "Self-initiated projects. Still in progress and updated from time to time.",
+    "empty": "Personal projects are on the way.",
+    "items": [
+      {
+        "title": "Brunei Analytics",
+        "status": "In progress",
+        "updated": "2026-10-15",
+        "summary": "Case studies and dashboards on Brunei Darussalam's public data from data.gov.bn, the World Bank, FAOSTAT and ILOSTAT, starting with the cost of living. Every dataset is credited to its publisher. Independent analysis, not an official government publication.",
+        "credit": "By Muhd Lai Razi with AI assistance (Claude).",
+        "tags": ["Python", "Quarto", "Public data"],
+        "url": ""
+      }
+    ]
+  }
+}
