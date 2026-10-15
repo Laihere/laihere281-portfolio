@@ -4,7 +4,6 @@
     "empty": "Details of my work at Al-Kindi Coding Centre are being written up.",
     "items": [
       {
-        "draft": true,
         "title": "FileQuik",
         "context": "Al-Kindi Coding Centre · Intelligent document management platform",
         "summary": "Part of the team building FileQuik. I led backend work on document information extraction and OCR, AI document chat, alerts, analytics, forms, Flow Hub, Calendar Hub and Dashboard Pilot. AI features are built by integrating third-party AI services.",
