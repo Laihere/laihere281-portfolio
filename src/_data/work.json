@@ -72,7 +72,7 @@
       {
         "title": "Brunei Analytics",
         "status": "In progress",
-        "updated": "2026-10-15",
+        "updated": "2026-10-16",
         "summary": "Case studies and dashboards on Brunei Darussalam's public data from data.gov.bn, the World Bank, FAOSTAT and ILOSTAT, starting with the cost of living. Every dataset is credited to its publisher. Independent analysis, not an official government publication.",
         "credit": "By Muhd Lai Razi with AI assistance (Claude).",
         "tags": [
@@ -80,7 +80,7 @@
           "Quarto",
           "Public data"
         ],
-        "url": ""
+        "url": "https://laihere.github.io/brunei-analytics/"
       }
     ]
   }
